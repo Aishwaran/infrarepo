@@ -5,22 +5,26 @@
 variable "region" {
   description = "AWS region code for creating resources."
   type        = string
+  default     = "ap-south-1"
 }
 
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
   type        = string
+  default     = "1.30"
 }
 
 
 variable "jx_git_url" {
   description = "URL for the Jenins X cluster git repository"
   type        = string
+  default     = "https://github.com/Aishwaran/asm.git"
 }
 
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
   type        = string
+  default     = "rootuser29"
 }
 
 variable "jx_bot_token" {
@@ -35,7 +39,7 @@ variable "jx_bot_token" {
 variable "cluster_name" {
   description = "Name of the Kubernetes cluster to create"
   type        = string
-  default     = ""
+  default     = "jenkinsx-cluster"
 }
 
 variable "ami_type" {
@@ -64,7 +68,7 @@ variable "nginx_chart_version" {
 variable "use_asm" {
   description = "Flag to specify if resources for AWS Secret MAanger should be created instead of vault resources"
   type        = bool
-  default     = false
+  default     = true
 }
 
 # VPC
