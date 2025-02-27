@@ -1,0 +1,23 @@
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  autoUpdate:
+    enabled: false
+  cluster:
+    environmentGitOwner: Aishwaran  # Replace with your GitHub Org
+    gitKind: github
+    gitName: github
+    gitServer: https://github.com
+    provider: eks
+  ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  repository: nexus
+  secretStorage: secretsManager
+  webhook: lighthouse
+
