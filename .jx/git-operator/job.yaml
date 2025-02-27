@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jx-boot
+  namespace: jx-git-operator
+spec:
+  template:
+    spec:
+      containers:
+      - name: jx-boot
+        image: ghcr.io/jenkins-x/jx-boot:latest
+        command: ["jx", "boot", "run"]
+      restartPolicy: Never
